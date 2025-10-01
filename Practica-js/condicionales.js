@@ -1,3 +1,7 @@
+//!CONDICIONALES
+//---------------------------------------------------------------------------------------------------------
+
+
 // !10.- Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 
 // !(sólo hay que comprobar si lo es por uno de los cuatro)
 // ?Ejemplo: 
@@ -59,7 +63,6 @@
 //     console.warn("No puedes ingresar")
 // }
 
-//^CONDICIONALES
 
 // &🔹 Ejercicio 2: Calificación con letras
 
@@ -124,27 +127,102 @@
 //         console.log(`Empate`)        
 // }
 
-// &📝 Ejercicio: Creando un generador de nombres de usuario
-// Imagina que estás construyendo una aplicación que crea nombres de usuario únicos para nuevos registros.
-//  El nombre de usuario debe seguir un formato específico.
-// Tu tarea es tomar el nombre y apellido de una persona y generar un nombre de usuario que cumpla con las siguientes reglas:
+// !6- Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.
+// ?Ejemplo: 
+// *input: 15 , 3
+// *Output: El 15 es el número más grande
 
-// *Debe estar en minúsculas.
-// *Debe contener la primera letra del nombre.
-// *Debe tener el apellido completo.
-// *Debe terminar con un número aleatorio entre 1 y 100.
-// !No debe tener espacios al principio ni al final.
+// let num1 =parseInt(prompt("Ingrese el primer numero"));
+// let num2 = parseInt(prompt("Ingrese el segundo numero"));
+// if (num1 > num2){
+//     alert("El primer numero es mayor " + num1)
+// }else{
+//     alert("El segundo numero es mayor " + num2)
+// }
 
-// ?Aquí tienes un ejemplo de lo que el código debería hacer:
-// Nombre de entrada: " Ana"
-// Apellido de entrada: "González "
-// Nombre de usuario generado: agonzalez[número] (por ejemplo, agonzalez54)
 
-// let nomUsuario = prompt("ingrese su Nombre ");
-// let primeraLetraNombre = nomUsuario.slice(0,1)
-// let apelliUsuario = prompt("Ingrese su apellido ");
-// let numAleatorio = Math.ceil(Math.random() * 10);
-// console.log(`Su nuevo nombre de usuario es ${primeraLetraNombre.toLowerCase()}${apelliUsuario.toLowerCase()}${numAleatorio}`)
+// !7.- Escribe un programa que pida 3 números y escriba en la pantalla el mayor de los tres.
+// ?Ejemplo: 
+// *input: 15 , 3, 9
+// *Output: El 15 es el número más grande
+// let num1 =parseInt(prompt("Ingrese el primer numero"));
+// let num2 = parseInt(prompt("Ingrese el segundo numero"));
+// let num3 = parseInt(prompt("Ingrese el tercer numero"));
+// if (num1 > num2){
+//     alert("El primer numero es mayor " + num1)
+// }else if (num2 > num3){
+//     alert("El  segundo numero  es mayor " + num2)
+// }else{
+//      alert("El tercer numero  es mayor " + num3)
+// }
+
+// !8.- Escribe un programa que pida un número y diga si es divisible por 2
+// ?Ejemplo: 
+//* input: 10
+// *input: 15
+// *Output: El 10 es divisible por 2.
+// *Output: El 15 no es divisible por 2.
+
+// let num = parseInt(prompt("Ingrese un numero "));
+// si al resultado de diviidir un numero entre 2 da  0 entonces es divisible por 2 
+// if (num  %2 == 0){
+//     alert(num + " es divisible por 2")
+// }else{
+//     alert(num + " no es divisible por 2")
+// }
+
+
+// !Ejercicio 1: Verificar edad para votar
+// ?Crea un programa que determine si una persona puede votar o no.
+// ?Si la edad es mayor o igual a 18, debe mostrar: "Puedes votar".
+// ?Si no, debe mostrar: "No puedes votar"
+
+// let edad =parseInt(prompt("Ingrese su edad: "));
+
+// if(edad >= 18){
+//     alert("Puede votar ")
+// }else{
+//     console.log("No puede votar")
+// }
+
+// !Ejercicio 2: Verificar número par o impar
+// *Pide un número (usa una variable, no prompt) y determina si es par o impar usando el operador % y una estructura if-else.
+// *Si es par: "El número es par".
+// *Si es impar: "El número es impar".
+
+// let num1 = parseInt(prompt("Ingrese un numero: "))
+
+// if (num1 %2 == 0 ){
+//          alert("El número es par")
+// }else{
+//     alert("El numero no es par")
+// }
+
+//! Ejercicio 9: Juego de piedra, papel o tijera
+
+//? Declara dos variables:
+// *let jugador1 = "piedra";
+// *let jugador2 = "tijera";
+
+
+//Todo Escribe un if para determinar quién gana.
+
+// ?Las reglas son las clásicas:
+// *Piedra gana a tijera
+// *Tijera gana a papel
+// *Papel gana a piedra
+// *Si ambos eligen lo mismo, imprime: "Empate".
+
+
+// let jugador1 = prompt("Jugador 1 elija: ");
+// let jugador2 = "tijera";
+// if (jugador1 == "piedra" ){
+//     console.log(" Jugador 1 Gano!")
+// }else if (jugador1 == "papel" ){
+//      console.log(" Jugador 2 Gano!")
+// }else{
+//     alert("¡Empate!")
+// }
 
 // !🔹 Ejercicio Difícil
 //* Calculadora de triángulos
@@ -167,29 +245,3 @@
 // }else{
 //     console.log("El triangulo es Escaleno")
 // }
-
-
-
-// ^^🔹 Ejercicio Difícil con String
-
-// *Usando un bucle while escribir un script que pida un valor entero y cree una lista con los 
-// *números desde el 0 al valor tecleado. Luego deberá sacar esa lista con un alert. 
-// *Los números se separarán por comas.  
-// &Si le doy el número 5 pues deberá contar 0,1,2,3,4,5
-
-//!Algoritmo
-//Datos: ingresar un numero,
-//Preceso : crear una lista hasta llegar al numero ingresado,separar los numero por ",".
-//Final: mostrar la lista con un alert
-
-let num = Number(prompt("Ingrese un numero: "));
-let lista = "";
-let contar = 0 ;
-while (contar < num){
-       lista += contar + ","
-       contar ++
-}
-lista += contar;//agrega el numero que ingreso el usuario a lo ultimo sin la coma 
-console.log(lista)
-
-
