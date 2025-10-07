@@ -1,0 +1,9 @@
+body{
+min-height: 100vh;
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=7628a9&c2=60c55a&gt=r&gd=dtl
+*/
+background: #7628A9;
+background: radial-gradient(at left top, #7628A9, #60C55A);
+}
