@@ -17,17 +17,17 @@ mensajeIncorrecto.classList.add("d-none");
 mensajeCorrecto.innerText("Palabra encontrada!!");
 
 function buscarPalabra() {
-
   let palabraBuscada = palabra.value.toLowerCase();
   let textoIngresado = texto.value.toLowerCase();
-
   if (textoIngresado.includes(palabraBuscada)) {
     mensajeCorrecto.classList.remove("d-none");
     mensajeCorrecto.innerText = "Palabra encontrada";
-    
+     mensajeIncorrecto.classList.add("d-none");
+
   } else {
     mensajeIncorrecto.classList.remove("d-none");
-    mensajeIncorrecto.innerText ="Palabra no  encontrada";
+    mensajeIncorrecto.innerText="Palabra no  encontrada" ;
+    mensajeCorrecto.classList.add("d-none");
   }
 }
 
