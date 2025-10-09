@@ -10,27 +10,31 @@
 
 let palabra = document.getElementById("palabra");
 let texto = document.getElementById("texto");
-let mensajeCorrecto = document.getElementById("mensaje_correcto");
-let mensajeIncorrecto = document.getElementById("mensaje_error");
-mensajeCorrecto.classList.add("d-none");
-mensajeIncorrecto.classList.add("d-none");
-mensajeCorrecto.innerText("Palabra encontrada!!");
+let mensajeAlert = document.querySelector("#mensaje_alert") 
+mensajeAlert.classList.add("d-none");
+
 
 function buscarPalabra() {
-  let palabraBuscada = palabra.value.toLowerCase();
+  let palabraBuscada = palabra.value.toLowerCase().trim();
   let textoIngresado = texto.value.toLowerCase();
-  if (textoIngresado.includes(palabraBuscada)) {
-    mensajeCorrecto.classList.remove("d-none");
-    mensajeCorrecto.innerText = "Palabra encontrada";
-     mensajeIncorrecto.classList.add("d-none");
 
+  if (textoIngresado.includes(palabraBuscada) && palabraBuscada !== "") {
+    crearMensaje("success", "<b>¡Palabra encontrada!</b>");
   } else {
-    mensajeIncorrecto.classList.remove("d-none");
-    mensajeIncorrecto.innerText="Palabra no  encontrada" ;
-    mensajeCorrecto.classList.add("d-none");
+    crearMensaje("danger", "<b>Palabra no encontrada</b>");
   }
 }
 
 function limpiarInput() {
   palabra.value = "";
+limpiarMensaje()
+}
+function limpiarMensaje(){
+    mensajeAlert.classList.add("d-none");
+  mensajeAlert.classList.remove("alert-danger", "alert-success");
+}
+function crearMensaje(tipo, texto) {
+  mensajeAlert.classList.remove("d-none", "alert-danger", "alert-success");
+  mensajeAlert.classList.add(`alert-${tipo}`);
+  mensajeAlert.innerHTML = texto;
 }
