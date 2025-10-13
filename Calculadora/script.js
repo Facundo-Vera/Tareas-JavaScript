@@ -1,26 +1,41 @@
-let inputNumero = document.getElementById("display")
-let numeros = document.querySelectorAll(".btn")
-let btnLimpiar = document.querySelector(".clear")
-btnLimpiar.addEventListener("click",limpiarInput)
+let inputNumero = document.getElementById("display");
+let numeros = document.querySelectorAll(".btn, .btn-plus");
+let btnLimpiar = document.querySelector(".clear");
+btnLimpiar.addEventListener("click", limpiarInput);
+
 
 //* Cuando hago click el navegador genera un objeto de evento que trae informacion del click y se lo pasa como parametro a la funcion
 //*y yo extraigo el valor que me trae ese objeto en este caso un numero
 function mostrarNumeros(evento) {
   // boton.target representa el botón que fue presionado
-  let valor = evento.target.textContent;  
-  // se agrega el valor al input
-  inputNumero.value += valor; 
+  let valor = evento.target.textContent;
+ 
+  if (valor === "c") {
+    limpiarInput();
+  }
+   // se agrega el valor al input
+  inputNumero.value += valor;
 }
 // le agrega a cada boton el eventlister
-const click = numeros
-click.forEach((numero)=> numero.addEventListener("click",mostrarNumeros))
+const click = numeros;
+click.forEach((numero) => numero.addEventListener("click", mostrarNumeros));
 
-function limpiarInput (){
-    inputNumero.value = "";
+function limpiarInput() {
+  inputNumero.value = "";
 }
 
-//!PROBLEMA:la funcion no sabe que boton fue presionado 
-//&Probando maneras de resolver el ejercicio (por mas que  no sean las mas efectivas :) 
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//!PROBLEMA:la funcion no sabe que boton fue presionado
+//&Probando maneras de resolver el ejercicio (por mas que  no sean las mas efectivas :)
 
 //^Tendria que hacer una funcion por cada numero por lo tanto no searia lo mas conveniente
 
