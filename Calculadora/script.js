@@ -13,15 +13,27 @@ function mostrarNumeros(evento) {
   if (valor === "c") {
     limpiarInput();
   }
+  if (valor === "=") {
+    try {
+      inputNumero.value = eval(inputNumero.value);
+    } catch (error) {
+      inputNumero.value = "Error";
+    }
+    return;
+  }
    // se agrega el valor al input
   inputNumero.value += valor;
 }
 // le agrega a cada boton el eventlister
 const click = numeros;
-click.forEach((numero) => numero.addEventListener("click", mostrarNumeros));
+click.forEach((numero) => {
+  if (numero.textContent.toLowerCase() !== "c") {
+    numero.addEventListener("click", mostrarNumeros);
+  }
+});
 
 function limpiarInput() {
-  inputNumero.value = "";
+  inputNumero.value = 0;
 }
 
 
