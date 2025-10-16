@@ -1,0 +1,22 @@
+*{
+      font-family: "Roboto", sans-serif;
+      color: rgb(224, 224, 224);
+}
+body{
+    background-color: #C8C8C8;
+}
+.card{
+    background-color: #43495D;
+}
+.lateral-izq{
+    background-color: #323548;
+}
+.contendor-rojo{
+    background-color: #CF432B;
+    box-shadow: 13px 18px 0px 0px rgb(15, 15, 15);
+-webkit-box-shadow: 13px 18px 0px 0px rgb(15, 15, 15);
+-moz-box-shadow: 13px 18px 0px 0px rgba(15,15,15);
+border: solid 3px black;
+    width: 200px;
+    height: 200px;
+}
