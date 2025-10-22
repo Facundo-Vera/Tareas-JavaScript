@@ -1,7 +1,7 @@
 let cuerpoTabla = document.querySelector("tbody");
 let inputNombre = document.querySelector("#name");
-let inputAutor = document.querySelector("#game");
-let inputAnio = document.querySelector("#port");
+let inputJuego = document.querySelector("#game");
+let inputPuerto = document.querySelector("#port");
 let inputDescripcion = document.querySelector("#description");
 let formulario = document.getElementById("bookServer");
 
@@ -73,6 +73,17 @@ function getServidores(array = listaServidores) {
     fila.innerHTML = celdas;
     cuerpoTabla.append(fila);
   });
+  if (array.length === 0) {
+    cuerpoTabla.innerHTML = `
+      <tr>
+        <td colspan="4"  class="text-center text-danger fs-5">
+          Servidor no encontrado
+        </td>
+      </tr>
+    `;
+    return;
+  }
+  
 }
 
 const agregarServidor = () => {
@@ -82,8 +93,8 @@ const agregarServidor = () => {
     //le asigno lo que ingreso en el input a las propiedades del objeto litastaServidores
     id,
     nombre: inputNombre.value,
-    juego: inputAutor.value,
-    puerto: inputAnio.value,
+    juego: inputJuego.value,
+    puerto: inputPuerto.value,
     descripcion: inputDescripcion.value,
   };
 
@@ -134,8 +145,8 @@ function cargarDatos(id) {
   let datos = listaServidores.find((servidor) => servidor.id === id);
 
   inputNombre.value = datos.nombre;
-  inputAutor.value = datos.juego;
-  inputAnio.value = datos.puerto;
+  inputJuego.value = datos.juego;
+  inputPuerto.value = datos.puerto;
   inputDescripcion.value = datos.descripcion;
 
   idUpdate = id;
@@ -162,8 +173,8 @@ formulario.addEventListener("submit", (event) => {
   } else {
     let valores = {
       nombre: inputNombre.value,
-      juego: inputAutor.value,       //
-      puerto: inputAnio.value,       
+      juego: inputJuego.value,       //
+      puerto: inputPuerto.value,       
       descripcion: inputDescripcion.value,
     };
     actualizaServidor(idUpdate, valores);
